@@ -1,4 +1,4 @@
-# <center> 파이썬 알고리즘 스터디 <p></p> ![](https://i.imgur.com/EdZ1JES.gif) </center>
+# <div align="center"> 파이썬 알고리즘 스터디 <p></p> ![](https://i.imgur.com/EdZ1JES.gif) </div>
 
 ## :sparkles: 팀원 소개
 
