@@ -19,25 +19,26 @@ dy = [0, 1, 0, -1]
 
 # 왼쪽 방향 돌리기
 direction = {0: 3, 3: 2, 2: 1, 1: 0}
-d = direction[d]
 
 while True:
+  # 왼쪽으로 회전
+  d = direction[d]
+
   # 한 방향으로 이동
   a += dx[d]
   b += dy[d]
-  
+
   # 해당 칸이 1(바다) 혹은 2(가본 칸)이면 뒤로 다시 이동
   if data[a][b] == 1 or data[a][b] == 2:
     a -= dx[d]
     b -= dy[d]
-    d = direction[d]
     count += 1
 
   # 해당 칸이 가보지 않은 칸
   elif data[a][b] == 0:
     data[a][b] = 2
     count = 0
-  
+
   # 네 방향 모두 가본 칸 혹은 바다
   if count == 4:
     # 뒤로 한 칸
