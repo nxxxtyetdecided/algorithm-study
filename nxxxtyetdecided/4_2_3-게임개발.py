@@ -1,4 +1,3 @@
-#%%
 # 맵의 크기 입력
 row, col = map(int, input().split())
 
@@ -22,11 +21,12 @@ def direction():
   if dir == -1: # 서쪽
     dir = 3
 
-cnt = 0 # 움직인 횟수
+cnt = 1 # 방문한 칸의 수!!!
 turn = 0
+arr[x][y] = 2
+
 while True:
   direction()
-  print(f'x: {x}, y: {y}')
   x = x + dx[dir]
   y = y + dy[dir]
 
@@ -34,7 +34,7 @@ while True:
     arr[x][y] = 2
     cnt += 1
     turn = 0 # 방향 초기화
-  else:
+  elif arr[x][y] ==1 or arr[x][y]==2:
     # 바다일 경우 - > 전진할 수 없는 경우 (0106 추가한 부분)
     x = x - dx[dir]
     y = y - dy[dir]
@@ -48,4 +48,3 @@ while True:
     turn = 0
 
 print(cnt)
-# arr.append([map(int, input().split())]) -> [<map object at 0x0000023D535287C0>] 출력
