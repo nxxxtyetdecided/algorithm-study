@@ -26,16 +26,21 @@ cnt = 0 # 움직인 횟수
 turn = 0
 while True:
   direction()
+  print(f'x: {x}, y: {y}')
   x = x + dx[dir]
   y = y + dy[dir]
+
   if arr[x][y] == 0:
     arr[x][y] = 2
     cnt += 1
     turn = 0 # 방향 초기화
   else:
+    # 바다일 경우 - > 전진할 수 없는 경우 (0106 추가한 부분)
+    x = x - dx[dir]
+    y = y - dy[dir]
     turn += 1
 
-  if turn == 3:
+  if turn == 4:
     x = x - dx[dir]
     y = y - dy[dir]
     if arr[x][y] == 1:
