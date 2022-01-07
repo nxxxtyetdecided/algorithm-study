@@ -1,15 +1,15 @@
 # 문자열 입력
-N = input()
+N, s, sum = input(), [], 0
 
-s = [] #알파벳 담을 리스트
-sum = 0 # 숫자 합계
 for n in N:
-    if n.isalpha(): # n이 알파벳이면
-        s.append(n)
-    else: #n이 숫자면
-        sum += int(n)
+    # 알파벳이면 리스트에 추가
+    if n.isalpha(): s.append(n)
 
-for a in sorted(s): # 오름차순으로 정렬된 문자열 s
-    print(a, end="")
+    # 숫자면 더하기
+    else: sum += int(n)
 
-if sum!=0 : print(sum) # 0이면 출력되지 않음
+#오름차순으로 정렬
+for a in sorted(s): print(a, end="")
+
+#0이 아니면 문자 뒤에 숫자 이어서 출력
+if sum!=0 : print(sum)
