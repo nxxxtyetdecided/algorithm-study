@@ -21,5 +21,4 @@ for i in range(len(arr)-1):
         # 1에서 0으로 바뀌는 순간
         else:
             arr1 += 1
-
 print(min(arr0, arr1))
